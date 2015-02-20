@@ -31,7 +31,7 @@ public abstract class AbstractSchemaSimilarityByWordNet {
 
 	private void initWordNetDb() {
 		if (dict == null) {
-			String wnhome = "/Users/admin/Documents/nlpworkspace/DeepQASupport/WordNet-3.0/";
+			String wnhome = "/Users/914957/Documents/DeepQA/DeepQASupport/WordNet-3.0/";
 			String separator = System.getProperty("file.separator");
 			String path = wnhome + separator + "dict";
 			URL url = null;
