@@ -1,9 +1,9 @@
 package deepqa.nlp;
 
 public enum NLPModels {
-	LOCATION("location"), ORGANIZATION("organization"), DATE("date"), MONEY("money"),
-	NUMBER("number"), OCCUPATION("occupation"), PERCENTAGE("percentage"), PERSON("person"),
-	TIME("time");
+	location("location"), organization("organization"), date("date"), money("money"),
+	number("number"), occupation("occupation"), percentage("percentage"), person("person"),
+	time("time");
 	
 	private String name;
 

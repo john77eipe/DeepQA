@@ -21,6 +21,7 @@ public class DocumentCategorizer {
 	final static Logger LOGGER = Logger.getLogger(DocumentCategorizer.class);
 	
 	public static void main(String[] args) throws InvalidFormatException, IOException {
+		
 		InputStream is = new FileInputStream(Constants.MODEL_LOC + "en-category.bin");
 		DoccatModel m = new DoccatModel(is);
 		String inputText = "Where was the last?";

@@ -1,14 +1,10 @@
 package deepqa.test;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import opennlp.tools.sentdetect.SentenceDetector;
@@ -19,13 +15,13 @@ import org.apache.solr.client.solrj.SolrServerException;
 
 import deepqa.CategorizeQue;
 import deepqa.InitiateQue;
-import deepqa.constants.Constants;
 import deepqa.dto.AnsConfRefBean;
 import deepqa.nlp.NLPFactory;
 import deepqa.nlp.NLPUtil;
 import deepqa.nlp.POSTagger;
 import deepqa.nlp.dc.DocumentCategory;
 import deepqa.nlp.exceptions.CategoryNotComposableException;
+import deepqa.nlp.exceptions.ContentUnavailableException;
 import deepqa.solr.SOLRUtil;
 
 public class TestDeepQA {
@@ -35,9 +31,9 @@ public class TestDeepQA {
 
 	public static AnsConfRefBean askMe(String question, String knownAns) {
 		try {
-			
-			//question = solveContext(question);
-			
+
+			// question = solveContext(question);
+
 			LOGGER.debug("Question asked: " + question);
 			String questionCategory = CategorizeQue
 					.getQuestionCategory(question);
@@ -46,45 +42,58 @@ public class TestDeepQA {
 
 			Map<String, String> searchList = POSTagger.tagPOS(question);
 			LOGGER.debug("Search List for Solr: " + searchList);
-			
-			List<String> highlightedParas = null;
-			highlightedParas = new ArrayList<String>();
-			
-			highlightedParas = SOLRUtil.rawquerySolr(searchList);
-			LOGGER.debug("****RawQuery highlights****\n" + highlightedParas);
 
-//			if (hlsentences.size() == 0) {
-//				hlsentences = SOLRUtil.querySolr(searchList);
-//				LOGGER.debug("****Query highlights****\n" + hlsentences);
-//			}
-//
-//			if (hlsentences.size() == 0) {
-//				hlsentences = SOLRUtil.altquerySolr(searchList);
-//				LOGGER.debug("****AltQuery highlights****\n" + hlsentences);
-//			}
+			List<String> highlightedText = null;
+			highlightedText = new ArrayList<String>();
+
+			highlightedText = SOLRUtil.rawquerySolr(searchList);
+			LOGGER.debug("****RawQuery highlights****\n" + highlightedText);
+
+			if (highlightedText.size() == 0) {
+				highlightedText = SOLRUtil.querySolr(searchList);
+				LOGGER.debug("****Query highlights****\n" + highlightedText);
+			}
 			
-			/*
+			if(highlightedText.size() == 0){
+				throw new ContentUnavailableException();
+			}
+		
 			DocumentCategory find = null;
 			find = DocumentCategory.valueOf(questionCategory);
 			LOGGER.debug("Loading Model: " + find.getCategory());
 
-			
 			SentenceDetector sdetector = NLPFactory.createSentenceDetector();
-			
-			//split sentences and find context information
-			Map<String, Double> splitsentences = new LinkedHashMap<String, Double>();
-			for (String hlsentense : highlightedParas) {
-				String[] sentences = sdetector.sentDetect(hlsentense);
-				for (String sentence : sentences) {
-					double chanceScore = findChanceScore(sentence);
-					sentence = StringUtils.replace(
-							StringUtils.replace(sentence, "#", ""), "#", "");
-					splitsentences.put(sentence, chanceScore);
+
+			/*
+			 * sentences map stores the sentences ready for processing by the
+			 * NLP system
+			 */
+			List<String> sentences = new ArrayList<String>();
+
+			for (String highlightedSnip : highlightedText) {
+				String[] detectedSentences = sdetector
+						.sentDetect(highlightedSnip);
+				/*
+				 * These sentences might not be complete. Incomplete sentences 
+				 * gets really bad results when fed into NLP
+				 * isValidSentence checks if sentence is valid
+				 */
+				for (String detectedSentence : detectedSentences) {
+					if (isValidSentence(detectedSentence)) {
+						detectedSentence = StringUtils.replace(
+								StringUtils.replace(detectedSentence, "#", ""),
+								"#", "");
+						sentences.add(detectedSentence);
+					}
 				}
 			}
-			LOGGER.debug(splitsentences);
-			responseMap = (TreeMap<String, Double>) NLPUtil.multiModel(
-					splitsentences, find.getCategory());
+			LOGGER.debug(sentences);
+			
+			/*
+			 * sentences are now fed into the NLP
+			 */
+			responseMap = (TreeMap<String, Double>) NLPUtil
+					.fetchAnsWithConfidence(sentences, find.getCategory());
 
 			if (responseMap != null && responseMap.size() > 0) {
 				for (Map.Entry<String, Double> entry : responseMap.entrySet()) {
@@ -92,27 +101,10 @@ public class TestDeepQA {
 					Double value = entry.getValue();
 
 					LOGGER.debug(key + " => " + value);
-					LOGGER.debug(NLPUtil.ansWithSentence.get(key));
-					TestCases.log(key + " => " + value);
+					
 				}
 			}
 
-			if (responseMap == null || responseMap.size() == 0) {
-				responseMap = (TreeMap<String, Double>) NLPUtil.multiModel_(
-						splitsentences, find.getCategory());
-
-				if (responseMap != null && responseMap.size() > 0) {
-					for (Map.Entry<String, Double> entry : responseMap
-							.entrySet()) {
-						String key = entry.getKey();
-						Double value = entry.getValue();
-
-						LOGGER.debug(key + " => " + value);
-						LOGGER.debug(NLPUtil.ansWithSentence.get(key));
-						TestCases.log(key + " => " + value);
-					}
-				}
-			}
 			if (responseMap != null && responseMap.size() > 0) {
 				if (find.toString().equals("P")) {
 					person_ctx = responseMap.firstKey();
@@ -122,14 +114,8 @@ public class TestDeepQA {
 					date_ctx = responseMap.firstKey();
 				}
 			}
-			TestCases.log("Known Answer: " + knownAns);
+			// TestCases.log("Known Answer: " + knownAns);
 			LOGGER.debug(responseMap.firstEntry().getKey());
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 
 			AnsConfRefBean ansConfRefBean = new AnsConfRefBean();
 			ansConfRefBean.setAnsWithConf(responseMap);
@@ -143,43 +129,42 @@ public class TestDeepQA {
 			// TrainUtil.retrainModel(questionCategory);
 			// }
 
-			return ansConfRefBean;*/
-			
+			return ansConfRefBean;
+
 		} catch (IOException e) {
 			LOGGER.error(e.getMessage());
 		} catch (SolrServerException e) {
 			LOGGER.error(e.getMessage());
 		} catch (CategoryNotComposableException e) {
 			LOGGER.error(e.getMessage());
+		} catch (ContentUnavailableException e) {
+			LOGGER.error(e.getMessage());
 		}
 		return null;
 	}
 
-	private static double findChanceScore(String hlsent) {
-		Pattern pattern = Pattern.compile("#\\w+#");
-		Matcher matcher = pattern.matcher(hlsent);
-
-		int count = 0;
-		while (matcher.find())
-			count++;
-
-		LOGGER.debug("Count:" + count);
-		double score = 0;
-		if (SOLRUtil.limitingFactor > 0) {
-			score = count / SOLRUtil.limitingFactor;
-		}
-		return score;
+	/**
+	 * Checks if a sentence starts with a Capital letter and has at least 3 words
+	 * @param hlsent
+	 * @return
+	 */
+	private static boolean isValidSentence(String hlsent) {
+		return Character.isUpperCase(hlsent.charAt(0)) && hlsent.split(" ").length>3;
 	}
-	
-	private static String solveContext(String question){
+
+	/**
+	 * Solving context based on previous results 
+	 * @param question
+	 * @return
+	 */
+	private static String solveContext(String question) {
 
 		if (Pattern.compile("\\she\\s").matcher(question).find())
 			question = question.replaceAll("\\she\\s", " " + person_ctx + " ");
 		if (Pattern.compile("\\sshe\\s").matcher(question).find())
 			question = question.replaceAll("\\sshe\\s", " " + person_ctx + " ");
 		if (Pattern.compile("\\sit\\s").matcher(question).find()) {
-			question = question.replaceAll("\\sit\\s", " " + organization_ctx
-					+ " ");
+			question = question.replaceAll("\\sit\\s", " " + organization_ctx + " ");
 		}
 		return question;
 	}

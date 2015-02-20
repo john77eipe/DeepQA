@@ -210,47 +210,47 @@ public class NLPFactory {
 	
 	public static NameFinderME createNameFinder(NLPModels modelType) {
 		switch(modelType){
-			case LOCATION:
+			case location:
 				if(_locationFinder == null){
 					_locationFinder = createSpecificFinder(modelType.getName());
 				}
 				return _locationFinder;
-			case DATE:
+			case date:
 				if(_dateFinder == null){
 					_dateFinder = createSpecificFinder(modelType.getName());
 				}
 				return _dateFinder;	
-			case PERCENTAGE:
+			case percentage:
 				if(_percentageFinder == null){
 					_percentageFinder = createSpecificFinder(modelType.getName());
 				}
 				return _percentageFinder;
-			case MONEY:
+			case money:
 				if(_moneyFinder == null){
 					_moneyFinder = createSpecificFinder(modelType.getName());
 				}
 				return _moneyFinder;
-			case NUMBER:
+			case number:
 				if(_numberFinder == null){
 					_numberFinder = createSpecificFinder(modelType.getName());
 				}
 				return _numberFinder;
-			case OCCUPATION:
+			case occupation:
 				if(_occupationFinder == null){
 					_occupationFinder = createSpecificFinder(modelType.getName());
 				}
 				return _occupationFinder;
-			case ORGANIZATION:
+			case organization:
 				if(_organizationFinder == null){
 					_organizationFinder = createSpecificFinder(modelType.getName());
 				}
 				return _organizationFinder;
-			case PERSON:
+			case person:
 				if(_personFinder == null){
 					_personFinder = createSpecificFinder(modelType.getName());
 				}
 				return _personFinder;
-			case TIME:
+			case time:
 				if(_timeFinder == null){
 					_timeFinder = createSpecificFinder(modelType.getName());
 				}

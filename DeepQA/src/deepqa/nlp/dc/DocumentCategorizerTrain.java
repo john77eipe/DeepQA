@@ -25,7 +25,7 @@ public class DocumentCategorizerTrain {
 
 		InputStream dataIn = null;
 		try {
-		  dataIn = new FileInputStream(Constants.MODEL_LOC+"en-category.train");
+		  dataIn = new FileInputStream(Constants.MODEL_TRAIN_LOC + "en-category.train");
 		  ObjectStream<String> lineStream =
 				new PlainTextByLineStream(dataIn, "UTF-8");
 		  ObjectStream<DocumentSample> sampleStream = new DocumentSampleStream(lineStream);

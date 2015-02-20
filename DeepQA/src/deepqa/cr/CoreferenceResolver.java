@@ -80,7 +80,7 @@ public class CoreferenceResolver {
 				|| preposition.equalsIgnoreCase("her")) {
 			return name + "'s";
 		}
-		return name;
+		return preposition;
 	}
 
 	private static List<String> findNames(String[] words)
@@ -90,7 +90,7 @@ public class CoreferenceResolver {
 		if (words != null && words.length > 0) {
 			System.out.println(Arrays.asList(words));
 			extractNameWithGivenModel(words, namesList, NER_PERSON_MODEL);
-			extractNameWithGivenModel(words, namesList, NER_PERSON_MODEL_CUSTOM);
+			//extractNameWithGivenModel(words, namesList, NER_PERSON_MODEL_CUSTOM);
 		}
 		return namesList;
 	}
@@ -104,7 +104,6 @@ public class CoreferenceResolver {
 			NameFinderME nameFinder = new NameFinderME(model);
 			Span nameSpans[] = nameFinder.find(words);
 			for (Span span : nameSpans) {
-				// System.out.println("**"+words[span.getStart()]);
 				namesList.add(words[span.getStart()]);
 			}
 
@@ -149,14 +148,14 @@ public class CoreferenceResolver {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String input = " John works in Atech. He is a programmers. His passion is coding. Krishna is in America. This was done by Krishna. "
-				+ "Mary lives in India. She loves her job.";
-		File f = new File(Constants.MODEL_LOC+"data.txt");
-		FileInputStream fin = new FileInputStream(f);
-		byte[] buffer = new byte[(int) f.length()];
-		new DataInputStream(fin).readFully(buffer);
-		fin.close();
-		input = new String(buffer, "UTF-8");
+		String input = " Krishna is in America. This was done by Krishna. "
+				+ "Mary lives in India. She loves her job. Dave is good at cooking. He cooks for all of us.";
+//		File f = new File(Constants.MODEL_LOC+"data.txt");
+//		FileInputStream fin = new FileInputStream(f);
+//		byte[] buffer = new byte[(int) f.length()];
+//		new DataInputStream(fin).readFully(buffer);
+//		fin.close();
+//		input = new String(buffer, "UTF-8");
 		System.out.println(input);
 		String output = parseAndResolve(input);
 		System.out.println("*********");

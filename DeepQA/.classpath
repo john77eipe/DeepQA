@@ -2,26 +2,21 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/commons-codec-1.6.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/commons-io-2.3.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/commons-lang3-3.3.2.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/httpclient-4.3.1.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/httpcore-4.3.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/httpmime-4.3.1.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/jaws-bin.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/jwnl-1.3.3.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/noggit-0.5.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/opennlp-maxent-3.0.3.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/opennlp-tools-1.5.3.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/opennlp-uima-1.5.3.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/slf4j-api-1.7.6.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/slf4j-simple-1.7.7.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/solr-solrj-4.9.0.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/wstx-asl-3.2.7.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_solr_wordnet/zookeeper-3.4.6.jar"/>
 	<classpathentry kind="src" path="/SimilarityUtils"/>
 	<classpathentry kind="lib" path="/DeepQASupport/jars_others/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="/DeepQASupport/jars_opencyc/opencyc-4.0.140336.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/opennlp-tools-1.5.3.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/commons-io-2.3.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_lucene_solr_complete/solr-solrj-4.9.0.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/wstx-asl-3.2.7.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/jaws-bin.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/httpclient-4.3.1.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/httpcore-4.3.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/httpmime-4.3.1.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/slf4j-api-1.7.6.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/slf4j-simple-1.7.7.jar"/>
+	<classpathentry kind="lib" path="/DeepQASupport/jars_opennlp_wordnet/noggit-0.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
