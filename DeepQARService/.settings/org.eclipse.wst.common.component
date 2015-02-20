@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="DeepQARService">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="jaws-bin.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/wordnet/jaws-bin.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="httpclient-4.3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/httpclient-4.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="solr-solrj-4.9.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/solr-solrj-4.9.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-codec-1.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/commons-codec-1.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="noggit-0.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/noggit-0.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jwnl-1.3.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/jwnl-1.3.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zookeeper-3.4.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/zookeeper-3.4.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-lang3-3.3.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/commons-lang3-3.3.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opennlp-uima-1.5.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/opennlp-uima-1.5.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opennlp-maxent-3.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/opennlp-maxent-3.0.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="slf4j-simple-1.7.7.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/slf4j-simple-1.7.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opennlp-tools-1.5.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/opennlp-tools-1.5.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="httpcore-4.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/httpcore-4.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="httpmime-4.3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/httpmime-4.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="wstx-asl-3.2.7.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/wstx-asl-3.2.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging-1.1.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/commons-logging-1.1.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-io-2.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/commons-io-2.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="slf4j-api-1.7.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/DeepQA/jars/httpclientforsolr/slf4j-api-1.7.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging-1.1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SimilarityUtils/lib/commons-logging-1.1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="edu.mit.jwi_1.1.2_jdk.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SimilarityUtils/lib/edu.mit.jwi_1.1.2_jdk.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jwnl.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SimilarityUtils/lib/jwnl.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="simmetrics.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SimilarityUtils/lib/simmetrics.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="JWordNetSim.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SimilarityUtils/lib/JWordNetSim.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/DeepQARService/build/classes"/>
+        <property name="context-root" value="DeepQARService"/>
+    </wb-module>
+</project-modules>
