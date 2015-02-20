@@ -32,16 +32,12 @@ import java.io.File;
 public class TamingTextTestJ4 extends Assert {
   @BeforeClass
   public static void setUp() {
-    File models = new File("C:\\Users\\Atechian\\Desktop\\WProto\\opennlp-models");
-    assertTrue(models.exists());
-    File wordnet = new File("C:\\Users\\Atechian\\Desktop\\WProto\\WordNet-3.0");
-    assertTrue(wordnet.exists());
-    System.setProperty("model.dir", "C:\\Users\\Atechian\\Desktop\\WProto\\opennlp-models");
-    System.setProperty("wordnet.dir", "C:\\Users\\Atechian\\Desktop\\WProto\\WordNet-3.0");
+    
+    
   }
   static {
-	  System.setProperty("model.dir", "C:\\Users\\Atechian\\Desktop\\WProto\\opennlp-models");
-	  System.setProperty("wordnet.dir", "C:\\Users\\Atechian\\Desktop\\WProto\\WordNet-3.0");
+	  System.setProperty("model.dir", "/Users/914957/Documents/DeepQA/DeepQASupport/opennlp_models");
+	  System.setProperty("wordnet.dir", "/Users/914957/Documents/DeepQA/DeepQASupport/WordNet-3.0");
   }
   public static File getWordNetDir(){
     String wordnetDir = System.getProperty("wordnet.dir");
