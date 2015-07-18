@@ -1,6 +1,5 @@
 package deepqa.cr;
 
-import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,8 +9,6 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import deepqa.constants.Constants;
 
 import opennlp.tools.cmdline.postag.POSModelLoader;
 import opennlp.tools.namefind.NameFinderME;
@@ -24,6 +21,7 @@ import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
 import opennlp.tools.util.Span;
+import deepqa.constants.Constants;
 
 public class CoreferenceResolver {
 	private static final String POS_MODEL_NAME = "en-pos-maxent.bin";
@@ -90,7 +88,8 @@ public class CoreferenceResolver {
 		if (words != null && words.length > 0) {
 			System.out.println(Arrays.asList(words));
 			extractNameWithGivenModel(words, namesList, NER_PERSON_MODEL);
-			//extractNameWithGivenModel(words, namesList, NER_PERSON_MODEL_CUSTOM);
+			// extractNameWithGivenModel(words, namesList,
+			// NER_PERSON_MODEL_CUSTOM);
 		}
 		return namesList;
 	}
@@ -98,7 +97,8 @@ public class CoreferenceResolver {
 	private static void extractNameWithGivenModel(String[] words,
 			List<String> namesList, String modelName)
 			throws FileNotFoundException {
-		InputStream modelIn = new FileInputStream(Constants.MODEL_LOC+modelName);
+		InputStream modelIn = new FileInputStream(Constants.MODEL_LOC
+				+ modelName);
 		try {
 			TokenNameFinderModel model = new TokenNameFinderModel(modelIn);
 			NameFinderME nameFinder = new NameFinderME(model);
@@ -122,8 +122,10 @@ public class CoreferenceResolver {
 	private static List<WordTagBean> tagWords(String input) throws IOException {
 		System.out.println("CoreferenceResolver.tagWords()");
 		List<WordTagBean> wordTagList = new ArrayList<WordTagBean>();
-		POSModel posModel = new POSModelLoader().load(new File(Constants.MODEL_LOC+POS_MODEL_NAME));
-		InputStream tokenizerModel = new FileInputStream(Constants.MODEL_LOC+TOKENIZER_MODEL_NAME);
+		POSModel posModel = new POSModelLoader().load(new File(
+				Constants.MODEL_LOC + POS_MODEL_NAME));
+		InputStream tokenizerModel = new FileInputStream(Constants.MODEL_LOC
+				+ TOKENIZER_MODEL_NAME);
 		TokenizerModel model = new TokenizerModel(tokenizerModel);
 
 		Tokenizer tokenizer = new TokenizerME(model);
@@ -150,12 +152,12 @@ public class CoreferenceResolver {
 	public static void main(String[] args) throws IOException {
 		String input = " Krishna is in America. This was done by Krishna. "
 				+ "Mary lives in India. She loves her job. Dave is good at cooking. He cooks for all of us.";
-//		File f = new File(Constants.MODEL_LOC+"data.txt");
-//		FileInputStream fin = new FileInputStream(f);
-//		byte[] buffer = new byte[(int) f.length()];
-//		new DataInputStream(fin).readFully(buffer);
-//		fin.close();
-//		input = new String(buffer, "UTF-8");
+		// File f = new File(Constants.MODEL_LOC+"data.txt");
+		// FileInputStream fin = new FileInputStream(f);
+		// byte[] buffer = new byte[(int) f.length()];
+		// new DataInputStream(fin).readFully(buffer);
+		// fin.close();
+		// input = new String(buffer, "UTF-8");
 		System.out.println(input);
 		String output = parseAndResolve(input);
 		System.out.println("*********");

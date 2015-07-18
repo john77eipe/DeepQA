@@ -28,6 +28,8 @@ public class SOLRUtil {
 	static List<List<String>> parentList = null;
 	public static Set<String> tokens = null;
 	public static int limitingFactor;
+	public static final String SEARCH_FIELD_CONTENT_RAW = "content_raw:";
+	public static final String SEARCH_FIELD_CONTENT_ALT = "content_alt:";
 	
 	final static Logger LOGGER = Logger.getLogger(SOLRUtil.class);
 	
@@ -40,7 +42,7 @@ public class SOLRUtil {
 	public static List<String> rawquerySolr(Map<String, String> taggedTokens)
 			throws SolrServerException {
 
-		LOGGER.debug("raw query");
+		LOGGER.debug("Initiating solr querying on content_raw");
 
 		removeStopWords(taggedTokens);
 		tokens = taggedTokens.keySet();
@@ -50,7 +52,7 @@ public class SOLRUtil {
 		SolrQuery query = new SolrQuery();
 		String rawQuery = getRawQuery(taggedTokens);
 		LOGGER.debug("Raw content matching query: "+rawQuery);
-		query.setQuery("content_raw:"+rawQuery);
+		query.setQuery(SEARCH_FIELD_CONTENT_RAW + rawQuery);
 		query.setParam("df", "content");
 		query.setParam("hl", "true");
 		query.setParam("hl.fl", "content");
@@ -60,7 +62,7 @@ public class SOLRUtil {
 		//query.setParam("hl.fragsize", "200");
 		query.setParam("fl", "id");
 		//query.setParam("sort", "score desc");
-		//query.setParam("hl.requireFieldMatch", true);
+		query.setParam("hl.requireFieldMatch", true);
 		query.setParam("hl.useFastVectorHighlighter", true);
 		query.setParam("hl.boundaryScanner", "breakIterator"); 
 //		query.setParam("hl.fragmenter", "regex");
@@ -227,14 +229,17 @@ public class SOLRUtil {
 			}
 		}
 		result = result +")";
-		LOGGER.debug("min result: "+result);
 		return result;
 	}
 	
+	/**
+	 * Creates query search keys for "raw" solr search
+	 * @param taggedTokens
+	 * @return
+	 */
 	private static String getRawQuery(Map<String, String> taggedTokens){
 		String result = "\"";
 		List<String> keys = new ArrayList<String>(taggedTokens.keySet());
-
 
 		for(int count=0; count<keys.size(); count++){
 			result = result + keys.get(count);
@@ -242,19 +247,18 @@ public class SOLRUtil {
 				result = result +" ";
 			}
 		}
-		result = result +"\"~15";
-		LOGGER.debug("min result: "+result);
+		result = result +"\"";
 		return result;
 	}
 	private static void removeStopWords(Map<String, String> taggedTokens) {
-		
+		LOGGER.debug("Removing stopwords");
 		Set<String> tokens = taggedTokens.keySet();
 		try {
 		//loading stopwords (based on http://www.ranks.nl/stopwords)
-		BufferedReader br = new BufferedReader(new FileReader(Constants.STOPWORDS_LOC+"stopwords.txt"));
+		BufferedReader br = new BufferedReader(new FileReader(Constants.STOPWORDS_LOC + "stopwords.txt"));
 		String line;
 		while ((line = br.readLine()) != null) {
-		   if(tokens.contains(line.trim())){
+		   if(tokens.contains(line.trim())) {
 			   taggedTokens.remove(line.trim());
 		   }
 		}

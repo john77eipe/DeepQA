@@ -5717,3 +5717,463 @@ Starting processing:
 2015-02-19 22:55:36 DEBUG TestDeepQA:103 - earlier that year => 0.6869006947868425
 2015-02-19 22:55:36 DEBUG TestDeepQA:104 - 
 2015-02-19 22:55:36 DEBUG TestDeepQA:119 - 1885
+2015-02-24 21:46:32 DEBUG InitiateQue:15 - Ask Question:
+2015-02-24 21:46:45 DEBUG TestDeepQA:37 - Question asked: Gandhi born
+2015-02-24 21:46:45 DEBUG DocumentCategorizer:43 - Category formulated: O
+2015-02-24 21:46:45 DEBUG TestDeepQA:41 - Question Category: O
+2015-02-24 21:46:45 DEBUG POSTagger:27 - Selected Tags: [NN, NNS, NNP, NNPS, PDT, POS, PRP, PRP$, JJR, JJ, JJS, VB, VBD, VBG, VBN, VBP, VBZ]
+2015-02-24 21:46:46 DEBUG POSTagger:48 - Tagged Tokens:Gandhi_NNP born_VBN
+2015-02-24 21:46:46 DEBUG TestDeepQA:44 - Search List for Solr: {born=VBN, Gandhi=NNP}
+2015-02-24 21:46:46 DEBUG SOLRUtil:43 - raw query
+2015-02-24 21:46:47 DEBUG SOLRUtil:246 - min result: "born Gandhi"~15
+2015-02-24 21:46:47 DEBUG SOLRUtil:52 - Raw content matching query: "born Gandhi"~15
+2015-02-24 21:46:47 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-24 21:46:47 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 0][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-24 21:46:47 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-24 21:46:47 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-24 21:46:47 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-24 21:46:47 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-24 21:46:47 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-24 21:46:47 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-24 21:46:47 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22%7E15&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-24 21:46:47 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22%7E15&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-24 21:46:47 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-24 21:46:47 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-24 21:46:47 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-24 21:46:47 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-24 21:46:47 DEBUG headers:272 - >> GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22%7E15&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-24 21:46:47 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-24 21:46:47 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-24 21:46:47 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-24 21:46:47 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-24 21:46:47 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-24 21:46:47 DEBUG wire:72 -  << "Content-Length: 869[\r][\n]"
+2015-02-24 21:46:47 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-24 21:46:47 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-24 21:46:47 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-24 21:46:47 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-24 21:46:47 DEBUG headers:259 - << Content-Length: 869
+2015-02-24 21:46:47 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-24 21:46:47 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTimeZ[0x4][0xe0]&params[0xad][0xe0]*hl.bs.type$LINE[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]"fl"id[0xe0]+hl.snippets"10[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q<content_raw:"born Gandhi"~15[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner-breakIterator[0xe0](response[0xc][0x83]a`[0x0][0x81][0xb][0xa1][0xe0]"id!1[0xe0],highlighting[0xa1][0xe0]!1[0xa1][0xe0]'content[0x85]?EMohandas Karamchand #Gandhi# was #born# on 2 October 1869 in Porbandar (also known as Sudamapuri), a?L' house, and away from her husband. In 1885, when #Gandhi# was 15, the couple's first child was #born#, but?F survived only a few days. Gandhi's father, Karamchand #Gandhi#, had also died earlier that year. The?O children, all sons: Harilal, born in 1888; Manilal, born in 1892; Ramdas, born in 1897; and Devdas, #born# in?I 1900. At his middle school in Porbandar and high school in Rajkot, #Gandhi# remained a mediocre student"
+2015-02-24 21:46:47 DEBUG PoolingClientConnectionManager:262 - Connection [id: 0][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-24 21:46:47 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 0][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-24 21:46:47 DEBUG SOLRUtil:76 - Request URL: null
+2015-02-24 21:46:47 DEBUG SOLRUtil:77 - Response length: 1
+2015-02-24 21:46:47 DEBUG SOLRUtil:78 - Response: 
+2015-02-24 21:46:47 DEBUG SOLRUtil:79 - ------------------------------
+2015-02-24 21:46:47 DEBUG SOLRUtil:94 - ------------------------------
+2015-02-24 21:46:47 DEBUG TestDeepQA:50 - ****RawQuery highlights****
+[Mohandas Karamchand Gandhi was born on 2 October 1869 in Porbandar (also known as Sudamapuri), a
+, ' house, and away from her husband. In 1885, when Gandhi was 15, the couple's first child was born, but
+,  survived only a few days. Gandhi's father, Karamchand Gandhi, had also died earlier that year. The
+,  children, all sons: Harilal, born in 1888; Manilal, born in 1892; Ramdas, born in 1897; and Devdas, born in
+,  1900. At his middle school in Porbandar and high school in Rajkot, Gandhi remained a mediocre student
+]
+2015-02-24 21:46:47 DEBUG TestDeepQA:63 - Loading Model: organization
+2015-02-24 21:46:47 DEBUG TestDeepQA:90 - [Mohandas Karamchand Gandhi was born on 2 October 1869 in Porbandar (also known as Sudamapuri), a, In 1885, when Gandhi was 15, the couple's first child was born, but
+, Gandhi's father, Karamchand Gandhi, had also died earlier that year., At his middle school in Porbandar and high school in Rajkot, Gandhi remained a mediocre student
+]
+2015-02-24 21:46:47 DEBUG PoolingClientConnectionManager:275 - Connection manager is shutting down
+2015-02-24 21:46:47 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:51952<->127.0.0.1:8983 closed
+2015-02-24 21:46:47 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:51952<->127.0.0.1:8983 closed
+2015-02-24 21:46:47 DEBUG PoolingClientConnectionManager:281 - Connection manager shut down
+2015-02-24 21:46:48 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-24 21:46:48 DEBUG NLPUtil:45 - [Mohandas, Karamchand, Gandhi, was, born, on, 2, October, 1869, in, Porbandar, (, also, known, as, Sudamapuri, ), ,, a]
+2015-02-24 21:46:48 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-24 21:46:48 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-24 21:46:48 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-24 21:46:48 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-24 21:46:48 DEBUG NLPUtil:45 - [In, 1885, ,, when, Gandhi, was, 15, ,, the, couple, ', s, first, child, was, born, ,, but]
+2015-02-24 21:46:48 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-24 21:46:48 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-24 21:46:48 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-24 21:46:48 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-24 21:46:48 DEBUG NLPUtil:45 - [Gandhi, ', s, father, ,, Karamchand, Gandhi, ,, had, also, died, earlier, that, year, .]
+2015-02-24 21:46:48 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-24 21:46:48 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-24 21:46:48 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-24 21:46:48 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-24 21:46:48 DEBUG NLPUtil:45 - [At, his, middle, school, in, Porbandar, and, high, school, in, Rajkot, ,, Gandhi, remained, a, mediocre, student]
+2015-02-24 21:46:48 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-24 21:46:48 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-24 21:46:48 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-24 21:46:48 DEBUG NLPUtil:57 - {}
+2015-02-25 00:10:07 DEBUG InitiateQue:15 - Ask Question:
+2015-02-25 00:10:26 DEBUG TestDeepQA:37 - Question asked: When was Gandhi born
+2015-02-25 00:10:26 DEBUG DocumentCategorizer:49 - Category formulated: T
+2015-02-25 00:10:26 DEBUG TestDeepQA:41 - Question Category: T
+2015-02-25 00:10:26 DEBUG POSTagger:27 - Selected Tags: [NN, NNS, NNP, NNPS, PDT, POS, PRP, PRP$, JJR, JJ, JJS, VB, VBD, VBG, VBN, VBP, VBZ]
+2015-02-25 00:10:27 DEBUG POSTagger:48 - Tagged Tokens:When_WRB was_VBD Gandhi_NNP born_VBN
+2015-02-25 00:10:27 DEBUG TestDeepQA:44 - Search List for Solr: {born=VBN, Gandhi=NNP, was=VBD}
+2015-02-25 00:10:27 DEBUG SOLRUtil:43 - raw query
+2015-02-25 00:10:28 DEBUG SOLRUtil:246 - min result: "born Gandhi"~15
+2015-02-25 00:10:28 DEBUG SOLRUtil:52 - Raw content matching query: "born Gandhi"~15
+2015-02-25 00:10:28 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-25 00:10:28 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 0][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-25 00:10:28 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-25 00:10:28 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-25 00:10:28 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-25 00:10:28 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-25 00:10:28 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-25 00:10:28 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-25 00:10:28 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22%7E15&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-25 00:10:28 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22%7E15&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-25 00:10:28 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-25 00:10:28 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-25 00:10:28 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-25 00:10:28 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-25 00:10:28 DEBUG headers:272 - >> GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22%7E15&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-25 00:10:28 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-25 00:10:28 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-25 00:10:28 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-25 00:10:28 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-25 00:10:28 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-25 00:10:28 DEBUG wire:72 -  << "Content-Length: 869[\r][\n]"
+2015-02-25 00:10:28 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-25 00:10:28 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-25 00:10:28 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-25 00:10:28 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-25 00:10:28 DEBUG headers:259 - << Content-Length: 869
+2015-02-25 00:10:28 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-25 00:10:28 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTimeU[0x1][0xe0]&params[0xad][0xe0]*hl.bs.type$LINE[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]"fl"id[0xe0]+hl.snippets"10[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q<content_raw:"born Gandhi"~15[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner-breakIterator[0xe0](response[0xc][0x83]a`[0x0][0x81][0xb][0xa1][0xe0]"id!1[0xe0],highlighting[0xa1][0xe0]!1[0xa1][0xe0]'content[0x85]?EMohandas Karamchand #Gandhi# was #born# on 2 October 1869 in Porbandar (also known as Sudamapuri), a?L' house, and away from her husband. In 1885, when #Gandhi# was 15, the couple's first child was #born#, but?F survived only a few days. Gandhi's father, Karamchand #Gandhi#, had also died earlier that year. The?O children, all sons: Harilal, born in 1888; Manilal, born in 1892; Ramdas, born in 1897; and Devdas, #born# in?I 1900. At his middle school in Porbandar and high school in Rajkot, #Gandhi# remained a mediocre student"
+2015-02-25 00:10:28 DEBUG PoolingClientConnectionManager:262 - Connection [id: 0][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-25 00:10:28 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 0][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-25 00:10:28 DEBUG SOLRUtil:76 - Request URL: null
+2015-02-25 00:10:28 DEBUG SOLRUtil:77 - Response length: 1
+2015-02-25 00:10:28 DEBUG SOLRUtil:78 - Response: 
+2015-02-25 00:10:28 DEBUG SOLRUtil:79 - ------------------------------
+2015-02-25 00:10:28 DEBUG SOLRUtil:94 - ------------------------------
+2015-02-25 00:10:28 DEBUG TestDeepQA:50 - ****RawQuery highlights****
+[Mohandas Karamchand Gandhi was born on 2 October 1869 in Porbandar (also known as Sudamapuri), a
+, ' house, and away from her husband. In 1885, when Gandhi was 15, the couple's first child was born, but
+,  survived only a few days. Gandhi's father, Karamchand Gandhi, had also died earlier that year. The
+,  children, all sons: Harilal, born in 1888; Manilal, born in 1892; Ramdas, born in 1897; and Devdas, born in
+,  1900. At his middle school in Porbandar and high school in Rajkot, Gandhi remained a mediocre student
+]
+2015-02-25 00:10:28 DEBUG TestDeepQA:63 - Loading Model: date
+2015-02-25 00:10:28 DEBUG TestDeepQA:90 - [Mohandas Karamchand Gandhi was born on 2 October 1869 in Porbandar (also known as Sudamapuri), a, In 1885, when Gandhi was 15, the couple's first child was born, but
+, Gandhi's father, Karamchand Gandhi, had also died earlier that year., At his middle school in Porbandar and high school in Rajkot, Gandhi remained a mediocre student
+]
+2015-02-25 00:10:28 DEBUG PoolingClientConnectionManager:275 - Connection manager is shutting down
+2015-02-25 00:10:28 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:52033<->127.0.0.1:8983 closed
+2015-02-25 00:10:28 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:52033<->127.0.0.1:8983 closed
+2015-02-25 00:10:28 DEBUG PoolingClientConnectionManager:281 - Connection manager shut down
+2015-02-25 00:10:29 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-25 00:10:29 DEBUG NLPUtil:45 - [Mohandas, Karamchand, Gandhi, was, born, on, 2, October, 1869, in, Porbandar, (, also, known, as, Sudamapuri, ), ,, a]
+2015-02-25 00:10:29 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-25 00:10:29 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-25 00:10:29 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-25 00:10:29 DEBUG NLPUtil:109 - date : October 1869
+2015-02-25 00:10:29 DEBUG NLPUtil:118 - 0.8230194819696393
+2015-02-25 00:10:29 DEBUG NLPUtil:127 - ansWithSentence: {October 1869=null}
+2015-02-25 00:10:29 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-25 00:10:29 DEBUG NLPUtil:45 - [In, 1885, ,, when, Gandhi, was, 15, ,, the, couple, ', s, first, child, was, born, ,, but]
+2015-02-25 00:10:29 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-25 00:10:29 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-25 00:10:29 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-25 00:10:29 DEBUG NLPUtil:109 - date : 1885
+2015-02-25 00:10:29 DEBUG NLPUtil:118 - 0.9383609230257518
+2015-02-25 00:10:29 DEBUG NLPUtil:127 - ansWithSentence: {1885=null, October 1869=null}
+2015-02-25 00:10:29 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-25 00:10:29 DEBUG NLPUtil:45 - [Gandhi, ', s, father, ,, Karamchand, Gandhi, ,, had, also, died, earlier, that, year, .]
+2015-02-25 00:10:29 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-25 00:10:29 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-25 00:10:29 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-25 00:10:29 DEBUG NLPUtil:109 - date : earlier that year
+2015-02-25 00:10:29 DEBUG NLPUtil:118 - 0.6869006947868425
+2015-02-25 00:10:29 DEBUG NLPUtil:127 - ansWithSentence: {earlier that year=null, 1885=null, October 1869=null}
+2015-02-25 00:10:29 DEBUG NLPUtil:43 - Sentence Tokenization begins
+2015-02-25 00:10:29 DEBUG NLPUtil:45 - [At, his, middle, school, in, Porbandar, and, high, school, in, Rajkot, ,, Gandhi, remained, a, mediocre, student]
+2015-02-25 00:10:29 DEBUG NLPUtil:46 - Sentence Tokenization ends
+2015-02-25 00:10:29 DEBUG NLPUtil:48 - NameFinder Process begins
+2015-02-25 00:10:29 DEBUG NLPUtil:51 - NameFinder Process ends
+2015-02-25 00:10:29 DEBUG NLPUtil:57 - {earlier that year=0.6869006947868425, 1885=0.9383609230257518, October 1869=0.8230194819696393}
+2015-02-25 00:10:29 DEBUG TestDeepQA:103 - 1885 => 0.9383609230257518
+2015-02-25 00:10:29 DEBUG TestDeepQA:103 - October 1869 => 0.8230194819696393
+2015-02-25 00:10:29 DEBUG TestDeepQA:103 - earlier that year => 0.6869006947868425
+2015-02-25 00:10:29 DEBUG TestDeepQA:118 - 1885
+2015-02-28 23:21:32 DEBUG InitiateQue:15 - Ask Question:
+2015-02-28 23:21:38 DEBUG TestDeepQA:37 - Question asked: Gandhi born
+2015-02-28 23:21:38 DEBUG DocumentCategorizer:49 - Category formulated: O
+2015-02-28 23:21:38 DEBUG TestDeepQA:41 - Question Category: O
+2015-02-28 23:21:38 DEBUG POSTagger:27 - Selected Tags: [NN, NNS, NNP, NNPS, PDT, POS, PRP, PRP$, JJR, JJ, JJS, VB, VBD, VBG, VBN, VBP, VBZ]
+2015-02-28 23:21:39 DEBUG POSTagger:48 - Tagged Tokens:Gandhi_NNP born_VBN
+2015-02-28 23:21:39 DEBUG TestDeepQA:44 - Search List for Solr: {born=VBN, Gandhi=NNP}
+2015-02-28 23:21:39 DEBUG SOLRUtil:45 - Initiating solr querying on content_raw
+2015-02-28 23:21:39 DEBUG SOLRUtil:254 - Removing stopwords
+2015-02-28 23:21:40 DEBUG SOLRUtil:54 - Raw content matching query: "born Gandhi"
+2015-02-28 23:21:40 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-28 23:21:40 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 0][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:21:40 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-28 23:21:40 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-28 23:21:40 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-28 23:21:40 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-28 23:21:40 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-28 23:21:40 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-28 23:21:40 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=content_raw%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:21:40 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=content_raw%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-28 23:21:40 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-28 23:21:40 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-28 23:21:40 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-28 23:21:40 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-28 23:21:40 DEBUG headers:272 - >> GET /solr/testCollection/select?q=content_raw%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:21:40 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-28 23:21:40 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-28 23:21:40 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-28 23:21:40 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-28 23:21:40 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-28 23:21:40 DEBUG wire:72 -  << "Content-Length: 310[\r][\n]"
+2015-02-28 23:21:40 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-28 23:21:40 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-28 23:21:40 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-28 23:21:40 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-28 23:21:40 DEBUG headers:259 - << Content-Length: 310
+2015-02-28 23:21:40 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-28 23:21:40 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTimeD[0xe0]&params[0xad][0xe0]*hl.bs.type$LINE[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]"fl"id[0xe0]+hl.snippets"10[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q8content_raw"born Gandhi"[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner-breakIterator[0xe0](response[0xc][0x83]``[0x0][0x80][0xe0],highlighting[0xa0]"
+2015-02-28 23:21:40 DEBUG PoolingClientConnectionManager:262 - Connection [id: 0][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-28 23:21:40 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 0][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:21:40 DEBUG SOLRUtil:78 - Request URL: null
+2015-02-28 23:21:40 DEBUG SOLRUtil:79 - Response length: 0
+2015-02-28 23:21:40 DEBUG SOLRUtil:80 - Response: 
+2015-02-28 23:21:40 DEBUG SOLRUtil:81 - ------------------------------
+2015-02-28 23:21:40 DEBUG SOLRUtil:96 - ------------------------------
+2015-02-28 23:21:40 DEBUG TestDeepQA:50 - ****RawQuery highlights****
+[]
+2015-02-28 23:21:40 DEBUG SOLRUtil:254 - Removing stopwords
+2015-02-28 23:21:40 DEBUG WordNetUtil:44 - Verb identified
+2015-02-28 23:21:40 DEBUG WordNetUtil:65 - The following synsets contain 'born' or a possible base form of that text:
+2015-02-28 23:21:42 DEBUG PoolingClientConnectionManager:275 - Connection manager is shutting down
+2015-02-28 23:21:42 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:50521<->127.0.0.1:8983 closed
+2015-02-28 23:21:42 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:50521<->127.0.0.1:8983 closed
+2015-02-28 23:21:42 DEBUG PoolingClientConnectionManager:281 - Connection manager shut down
+2015-02-28 23:21:42 DEBUG WordNetUtil:60 - Avoiding WordNet search for: Gandhi
+2015-02-28 23:21:42 DEBUG WordNetUtil:82 - No synsets exist that contain the word form 'Gandhi'
+2015-02-28 23:21:42 DEBUG SOLRUtil:209 - Calculating Combinations and Ranks
+2015-02-28 23:21:42 DEBUG SOLRUtil:317 - (Gandhi AND bear)^1 OR (Gandhi AND born)^2
+2015-02-28 23:21:42 DEBUG SOLRUtil:116 - (Gandhi AND bear)^1 OR (Gandhi AND born)^2
+2015-02-28 23:21:42 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-28 23:21:42 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 1][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:21:42 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-28 23:21:42 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-28 23:21:42 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-28 23:21:42 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-28 23:21:42 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-28 23:21:42 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-28 23:21:42 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:21:42 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-28 23:21:42 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-28 23:21:42 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-28 23:21:42 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-28 23:21:42 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-28 23:21:42 DEBUG headers:272 - >> GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:21:42 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-28 23:21:42 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-28 23:21:42 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-28 23:21:42 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-28 23:21:42 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-28 23:21:42 DEBUG wire:72 -  << "Content-Length: 358[\r][\n]"
+2015-02-28 23:21:42 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-28 23:21:42 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-28 23:21:42 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-28 23:21:42 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-28 23:21:42 DEBUG headers:259 - << Content-Length: 358
+2015-02-28 23:21:42 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-28 23:21:42 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTimeE[0xe0]&params[0xae][0xe0]+hl.fragsize#300[0xe0]4hl.requireFieldMatch$true[0xe0]$sort*score desc[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]+hl.snippets!3[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q?[0xb](Gandhi AND bear)^1 OR (Gandhi AND born)^2[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner&simple[0xe0](response[0xc][0x83]``[0x0][0x80][0xe0],highlighting[0xa0]"
+2015-02-28 23:21:42 DEBUG PoolingClientConnectionManager:262 - Connection [id: 1][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-28 23:21:42 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 1][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:21:42 DEBUG SOLRUtil:134 - Response length: 0
+2015-02-28 23:21:42 DEBUG SOLRUtil:154 - ------------------------------
+
+2015-02-28 23:21:42 DEBUG TestDeepQA:54 - ****Query highlights****
+[]
+2015-02-28 23:21:42 ERROR TestDeepQA:141 - 
+2015-02-28 23:24:18 DEBUG InitiateQue:15 - Ask Question:
+2015-02-28 23:24:29 DEBUG TestDeepQA:37 - Question asked: When Gandhi born
+2015-02-28 23:24:29 DEBUG DocumentCategorizer:49 - Category formulated: T
+2015-02-28 23:24:29 DEBUG TestDeepQA:41 - Question Category: T
+2015-02-28 23:24:29 DEBUG POSTagger:27 - Selected Tags: [NN, NNS, NNP, NNPS, PDT, POS, PRP, PRP$, JJR, JJ, JJS, VB, VBD, VBG, VBN, VBP, VBZ]
+2015-02-28 23:24:30 DEBUG POSTagger:48 - Tagged Tokens:When_WRB Gandhi_NNP born_VBN
+2015-02-28 23:24:30 DEBUG TestDeepQA:44 - Search List for Solr: {born=VBN, Gandhi=NNP}
+2015-02-28 23:24:30 DEBUG SOLRUtil:45 - Initiating solr querying on content_raw
+2015-02-28 23:24:30 DEBUG SOLRUtil:254 - Removing stopwords
+2015-02-28 23:24:30 DEBUG SOLRUtil:54 - Raw content matching query: "born Gandhi"
+2015-02-28 23:24:30 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-28 23:24:30 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 0][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:24:30 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-28 23:24:30 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-28 23:24:30 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-28 23:24:30 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-28 23:24:30 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-28 23:24:30 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-28 23:24:30 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:24:30 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-28 23:24:30 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-28 23:24:30 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-28 23:24:30 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-28 23:24:30 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-28 23:24:30 DEBUG headers:272 - >> GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:24:30 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-28 23:24:30 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-28 23:24:30 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-28 23:24:30 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-28 23:24:30 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-28 23:24:30 DEBUG wire:72 -  << "Content-Length: 311[\r][\n]"
+2015-02-28 23:24:30 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-28 23:24:30 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-28 23:24:30 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-28 23:24:30 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-28 23:24:30 DEBUG headers:259 - << Content-Length: 311
+2015-02-28 23:24:30 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-28 23:24:30 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTimeA[0xe0]&params[0xad][0xe0]*hl.bs.type$LINE[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]"fl"id[0xe0]+hl.snippets"10[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q9content_raw:"born Gandhi"[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner-breakIterator[0xe0](response[0xc][0x83]``[0x0][0x80][0xe0],highlighting[0xa0]"
+2015-02-28 23:24:30 DEBUG PoolingClientConnectionManager:262 - Connection [id: 0][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-28 23:24:30 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 0][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:24:30 DEBUG SOLRUtil:78 - Request URL: null
+2015-02-28 23:24:30 DEBUG SOLRUtil:79 - Response length: 0
+2015-02-28 23:24:30 DEBUG SOLRUtil:80 - Response: 
+2015-02-28 23:24:30 DEBUG SOLRUtil:81 - ------------------------------
+2015-02-28 23:24:30 DEBUG SOLRUtil:96 - ------------------------------
+2015-02-28 23:24:30 DEBUG TestDeepQA:50 - ****RawQuery highlights****
+[]
+2015-02-28 23:24:30 DEBUG SOLRUtil:254 - Removing stopwords
+2015-02-28 23:24:30 DEBUG WordNetUtil:44 - Verb identified
+2015-02-28 23:24:31 DEBUG WordNetUtil:65 - The following synsets contain 'born' or a possible base form of that text:
+2015-02-28 23:24:32 DEBUG PoolingClientConnectionManager:275 - Connection manager is shutting down
+2015-02-28 23:24:32 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:50565<->127.0.0.1:8983 closed
+2015-02-28 23:24:32 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:50565<->127.0.0.1:8983 closed
+2015-02-28 23:24:32 DEBUG PoolingClientConnectionManager:281 - Connection manager shut down
+2015-02-28 23:24:32 DEBUG WordNetUtil:60 - Avoiding WordNet search for: Gandhi
+2015-02-28 23:24:32 DEBUG WordNetUtil:82 - No synsets exist that contain the word form 'Gandhi'
+2015-02-28 23:24:32 DEBUG SOLRUtil:209 - Calculating Combinations and Ranks
+2015-02-28 23:24:32 DEBUG SOLRUtil:317 - (Gandhi AND bear)^1 OR (Gandhi AND born)^2
+2015-02-28 23:24:32 DEBUG SOLRUtil:116 - (Gandhi AND bear)^1 OR (Gandhi AND born)^2
+2015-02-28 23:24:32 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-28 23:24:32 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 1][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:24:32 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-28 23:24:32 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-28 23:24:32 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-28 23:24:32 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-28 23:24:32 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-28 23:24:32 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-28 23:24:32 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:24:32 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-28 23:24:32 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-28 23:24:32 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-28 23:24:32 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-28 23:24:32 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-28 23:24:32 DEBUG headers:272 - >> GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:24:32 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-28 23:24:32 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-28 23:24:32 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-28 23:24:32 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-28 23:24:32 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-28 23:24:32 DEBUG wire:72 -  << "Content-Length: 358[\r][\n]"
+2015-02-28 23:24:32 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-28 23:24:32 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-28 23:24:32 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-28 23:24:32 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-28 23:24:32 DEBUG headers:259 - << Content-Length: 358
+2015-02-28 23:24:32 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-28 23:24:32 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTimeA[0xe0]&params[0xae][0xe0]+hl.fragsize#300[0xe0]4hl.requireFieldMatch$true[0xe0]$sort*score desc[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]+hl.snippets!3[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q?[0xb](Gandhi AND bear)^1 OR (Gandhi AND born)^2[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner&simple[0xe0](response[0xc][0x83]``[0x0][0x80][0xe0],highlighting[0xa0]"
+2015-02-28 23:24:32 DEBUG PoolingClientConnectionManager:262 - Connection [id: 1][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-28 23:24:32 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 1][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:24:32 DEBUG SOLRUtil:134 - Response length: 0
+2015-02-28 23:24:32 DEBUG SOLRUtil:154 - ------------------------------
+
+2015-02-28 23:24:32 DEBUG TestDeepQA:54 - ****Query highlights****
+[]
+2015-02-28 23:24:32 ERROR TestDeepQA:141 - 
+2015-02-28 23:28:35 DEBUG InitiateQue:15 - Ask Question:
+2015-02-28 23:28:40 DEBUG TestDeepQA:37 - Question asked: Gandhi born
+2015-02-28 23:28:40 DEBUG DocumentCategorizer:49 - Category formulated: O
+2015-02-28 23:28:40 DEBUG TestDeepQA:41 - Question Category: O
+2015-02-28 23:28:40 DEBUG POSTagger:27 - Selected Tags: [NN, NNS, NNP, NNPS, PDT, POS, PRP, PRP$, JJR, JJ, JJS, VB, VBD, VBG, VBN, VBP, VBZ]
+2015-02-28 23:28:41 DEBUG POSTagger:48 - Tagged Tokens:Gandhi_NNP born_VBN
+2015-02-28 23:28:41 DEBUG TestDeepQA:44 - Search List for Solr: {born=VBN, Gandhi=NNP}
+2015-02-28 23:28:41 DEBUG SOLRUtil:45 - Initiating solr querying on content_raw
+2015-02-28 23:28:41 DEBUG SOLRUtil:254 - Removing stopwords
+2015-02-28 23:28:42 DEBUG SOLRUtil:54 - Raw content matching query: "born Gandhi"
+2015-02-28 23:28:42 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-28 23:28:42 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 0][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:28:42 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-28 23:28:42 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-28 23:28:42 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-28 23:28:42 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-28 23:28:42 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-28 23:28:42 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-28 23:28:42 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:28:42 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-28 23:28:42 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-28 23:28:42 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-28 23:28:42 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-28 23:28:42 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-28 23:28:42 DEBUG headers:272 - >> GET /solr/testCollection/select?q=content_raw%3A%22born+Gandhi%22&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=10&fl=id&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=breakIterator&hl.bs.type=LINE&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:28:42 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-28 23:28:42 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-28 23:28:42 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-28 23:28:42 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-28 23:28:42 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-28 23:28:42 DEBUG wire:72 -  << "Content-Length: 342[\r][\n]"
+2015-02-28 23:28:42 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-28 23:28:42 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-28 23:28:42 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-28 23:28:42 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-28 23:28:42 DEBUG headers:259 - << Content-Length: 342
+2015-02-28 23:28:42 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-28 23:28:42 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTime[0x6][0x0][0x0][0x0][0x0][0xe0]&params[0xae][0xe0]4hl.requireFieldMatch$true[0xe0]*hl.bs.type$LINE[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]"fl"id[0xe0]+hl.snippets"10[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q9content_raw:"born Gandhi"[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner-breakIterator[0xe0](response[0xc][0x83]``[0x0][0x80][0xe0],highlighting[0xa0]"
+2015-02-28 23:28:42 DEBUG PoolingClientConnectionManager:262 - Connection [id: 0][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-28 23:28:42 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 0][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:28:42 DEBUG SOLRUtil:78 - Request URL: null
+2015-02-28 23:28:42 DEBUG SOLRUtil:79 - Response length: 0
+2015-02-28 23:28:42 DEBUG SOLRUtil:80 - Response: 
+2015-02-28 23:28:42 DEBUG SOLRUtil:81 - ------------------------------
+2015-02-28 23:28:42 DEBUG SOLRUtil:96 - ------------------------------
+2015-02-28 23:28:42 DEBUG TestDeepQA:50 - ****RawQuery highlights****
+[]
+2015-02-28 23:28:42 DEBUG SOLRUtil:254 - Removing stopwords
+2015-02-28 23:28:42 DEBUG WordNetUtil:44 - Verb identified
+2015-02-28 23:28:42 DEBUG WordNetUtil:65 - The following synsets contain 'born' or a possible base form of that text:
+2015-02-28 23:28:43 DEBUG PoolingClientConnectionManager:275 - Connection manager is shutting down
+2015-02-28 23:28:43 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:50604<->127.0.0.1:8983 closed
+2015-02-28 23:28:43 DEBUG DefaultClientConnection:176 - Connection 0.0.0.0:50604<->127.0.0.1:8983 closed
+2015-02-28 23:28:43 DEBUG PoolingClientConnectionManager:281 - Connection manager shut down
+2015-02-28 23:28:44 DEBUG WordNetUtil:60 - Avoiding WordNet search for: Gandhi
+2015-02-28 23:28:44 DEBUG WordNetUtil:82 - No synsets exist that contain the word form 'Gandhi'
+2015-02-28 23:28:44 DEBUG SOLRUtil:209 - Calculating Combinations and Ranks
+2015-02-28 23:28:44 DEBUG SOLRUtil:317 - (Gandhi AND bear)^1 OR (Gandhi AND born)^2
+2015-02-28 23:28:44 DEBUG SOLRUtil:116 - (Gandhi AND bear)^1 OR (Gandhi AND born)^2
+2015-02-28 23:28:44 DEBUG PoolingClientConnectionManager:182 - Connection request: [route: {}->http://localhost:8983][total kept alive: 0; route allocated: 0 of 32; total allocated: 0 of 128]
+2015-02-28 23:28:44 DEBUG PoolingClientConnectionManager:214 - Connection leased: [id: 1][route: {}->http://localhost:8983][total kept alive: 0; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:28:44 DEBUG DefaultClientConnectionOperator:175 - Connecting to localhost:8983
+2015-02-28 23:28:44 DEBUG RequestAddCookies:122 - CookieSpec selected: best-match
+2015-02-28 23:28:44 DEBUG RequestAuthCache:75 - Auth cache not set in the context
+2015-02-28 23:28:44 DEBUG RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+2015-02-28 23:28:44 DEBUG RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+2015-02-28 23:28:44 DEBUG SystemDefaultHttpClient:680 - Attempt 1 to execute request
+2015-02-28 23:28:44 DEBUG DefaultClientConnection:268 - Sending request: GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:28:44 DEBUG wire:72 -  >> "GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1[\r][\n]"
+2015-02-28 23:28:44 DEBUG wire:72 -  >> "User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0[\r][\n]"
+2015-02-28 23:28:44 DEBUG wire:72 -  >> "Host: localhost:8983[\r][\n]"
+2015-02-28 23:28:44 DEBUG wire:72 -  >> "Connection: Keep-Alive[\r][\n]"
+2015-02-28 23:28:44 DEBUG wire:72 -  >> "[\r][\n]"
+2015-02-28 23:28:44 DEBUG headers:272 - >> GET /solr/testCollection/select?q=%28Gandhi+AND+bear%29%5E1+OR+%28Gandhi+AND+born%29%5E2&df=content&hl=true&hl.fl=content&hl.simple.pre=%23&hl.simple.post=%23&hl.snippets=3&hl.fragsize=300&sort=score+desc&hl.requireFieldMatch=true&hl.useFastVectorHighlighter=true&hl.boundaryScanner=simple&wt=javabin&version=2 HTTP/1.1
+2015-02-28 23:28:44 DEBUG headers:275 - >> User-Agent: Solr[org.apache.solr.client.solrj.impl.HttpSolrServer] 1.0
+2015-02-28 23:28:44 DEBUG headers:275 - >> Host: localhost:8983
+2015-02-28 23:28:44 DEBUG headers:275 - >> Connection: Keep-Alive
+2015-02-28 23:28:44 DEBUG wire:72 -  << "HTTP/1.1 200 OK[\r][\n]"
+2015-02-28 23:28:44 DEBUG wire:72 -  << "Content-Type: application/octet-stream[\r][\n]"
+2015-02-28 23:28:44 DEBUG wire:72 -  << "Content-Length: 358[\r][\n]"
+2015-02-28 23:28:44 DEBUG wire:72 -  << "[\r][\n]"
+2015-02-28 23:28:44 DEBUG DefaultClientConnection:253 - Receiving response: HTTP/1.1 200 OK
+2015-02-28 23:28:44 DEBUG headers:256 - << HTTP/1.1 200 OK
+2015-02-28 23:28:44 DEBUG headers:259 - << Content-Type: application/octet-stream
+2015-02-28 23:28:44 DEBUG headers:259 - << Content-Length: 358
+2015-02-28 23:28:44 DEBUG SystemDefaultHttpClient:509 - Connection can be kept alive indefinitely
+2015-02-28 23:28:44 DEBUG wire:86 -  << "[0x2][0xa3][0xe0].responseHeader[0xa3][0xe0]&status[0x6][0x0][0x0][0x0][0x0][0xe0]%QTimeA[0xe0]&params[0xae][0xe0]+hl.fragsize#300[0xe0]4hl.requireFieldMatch$true[0xe0]$sort*score desc[0xe0]-hl.simple.pre!#[0xe0]%hl.fl'content[0xe0]"wt'javabin[0xe0]"hl$true[0xe0]'version!2[0xe0]"df'content[0xe0]+hl.snippets!3[0xe0];hl.useFastVectorHighlighter$true[0xe0]!q?[0xb](Gandhi AND bear)^1 OR (Gandhi AND born)^2[0xe0].hl.simple.post!#[0xe0]2hl.boundaryScanner&simple[0xe0](response[0xc][0x83]``[0x0][0x80][0xe0],highlighting[0xa0]"
+2015-02-28 23:28:44 DEBUG PoolingClientConnectionManager:262 - Connection [id: 1][route: {}->http://localhost:8983] can be kept alive indefinitely
+2015-02-28 23:28:44 DEBUG PoolingClientConnectionManager:269 - Connection released: [id: 1][route: {}->http://localhost:8983][total kept alive: 1; route allocated: 1 of 32; total allocated: 1 of 128]
+2015-02-28 23:28:44 DEBUG SOLRUtil:134 - Response length: 0
+2015-02-28 23:28:44 DEBUG SOLRUtil:154 - ------------------------------
+
+2015-02-28 23:28:44 DEBUG TestDeepQA:54 - ****Query highlights****
+[]
+2015-02-28 23:28:44 ERROR TestDeepQA:141 - 

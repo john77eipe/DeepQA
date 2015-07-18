@@ -20,6 +20,12 @@ public class DocumentCategorizer {
 
 	final static Logger LOGGER = Logger.getLogger(DocumentCategorizer.class);
 	
+	/**
+	 * Main method is for testing purpose
+	 * @param args
+	 * @throws InvalidFormatException
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws InvalidFormatException, IOException {
 		
 		InputStream is = new FileInputStream(Constants.MODEL_LOC + "en-category.bin");
@@ -42,14 +48,13 @@ public class DocumentCategorizer {
 		String category = myCategorizer.getBestCategory(outcomes);
 		LOGGER.debug("Category formulated: "+category);
 		
-		//for cateogries W, B, X we translate it to other categories since 
-		//no models exists for those
+		//for cateogries W, B, X we substitute it to other categories since 
+		//i dont have  for those
 		
 		//translation is straight forward: and doesn't use any NLP principles
 		if(specialCategories.contains(category)){
 			//find the question type - old style
 			List<String> input = Arrays.asList(inputText.toLowerCase().split(" "));
-			LOGGER.debug("matched: "+input);
 			QuestionType[] questionTypes = QuestionType.values();
 			for(QuestionType questionType: questionTypes){
 				if(input.contains(questionType.toString())){
